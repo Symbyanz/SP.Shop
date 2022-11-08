@@ -1,0 +1,20 @@
+{% from "../../components/form/form.nunj" import form %}
+
+{% macro tabs() %}
+<div class="tabs">
+	<ul class="tabs__items">
+		<li class="tabs-item _active">Pay with Credit Card</li>
+		<li class="tabs-item _img">
+			<img src="../../assets/images/PayPal.png" alt="PayPal">
+		</li>
+	</ul>
+	<div class="tabs__blocks">
+		<div class="tabs-block _active">
+			{{ form('Card') }}
+		</div>
+		<div class="tabs-block">
+			{{ form('PayPal') }}
+		</div>
+	</div>
+</div>
+{% endmacro %}

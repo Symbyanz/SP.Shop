@@ -1,0 +1,76 @@
+{% extends "../templates/base.nunj" %}
+
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/icon/icon.nunj" import icon %}
+{% from "../components/progressBar/progressBar.nunj" import progressBar %}
+{% from "../components/tabs/tabs.nunj" import tabs %}
+{% from "../components/button/button.nunj" import button %}
+{% from "../components/basket/basket.nunj" import basket %}
+
+{# Пример расширения существующего блока #}
+{# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
+{% block title %}Cart / {{ super() }}{% endblock title %}
+
+{% block content %}
+
+{% include '../includes/header/header.nunj' %}
+{% include '../includes/mobile-menu/mobile-menu.nunj' %}
+
+
+<section class="cart">
+	<div class="cart__container">
+		<div class="cart__content">
+			<div class="cart__progress-bar">
+				{{ progressBar() }}
+			</div>
+
+			<div class="cart__step">
+				<div class="step">
+					<div class="step__content">
+						<!-- or another content -->
+						<h3 class="step__title">Billing Information</h3>
+						<div class="step__tab-box">
+							{{ tabs() }}
+						</div>
+						<!-- / or another content -->
+						<div class="step__controllers">
+							{{ button({
+							className: 'step__button _back',
+							children: 'Back',
+							chevronRight: false
+							}) }}
+							{{ button({
+							className: 'step__button _check-out _blue',
+							children: 'Check Out',
+							chevronRight: false
+							}) }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cart__sidebar _basket">
+			{{ basket([
+			{
+			id: 234,
+			name: 'Amet minim mollit non deserunt ullamco est sit',
+			image: '../../assets/images/product_1.png',
+			price: 525,
+			count: 1,
+			maxCount: 1020,
+			link: '#'
+			},
+			{
+			id: 111,
+			name: 'Amet minim mollit non',
+			image: '../../assets/images/product_2.png',
+			count: 14,
+			price: 525,
+			maxCount: 2020,
+			link: '#'
+			}
+			]) }}
+		</div>
+	</div>
+
+	{% endblock %}

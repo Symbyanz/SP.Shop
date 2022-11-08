@@ -1,0 +1,21 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+
+{% macro cartLink(number) %}
+<div class="cartLink">
+	{{ icon({
+		iconName: 'cart',
+		className: 'icon _cart',
+		attr: 'viewBox="0 0 24 24" style="width: 24px; height: 24px;"'
+	}) }}
+	{% if (number > 0) and (number < 100) %}
+	<span class="badge">
+		{{ number }}
+	</span>
+	{% elif number > 0 %}
+	<span class="badge _big">
+		99+
+	</span>
+	{% endif %}
+</div>
+{% endmacro %}
+{# может быть отдельным элементом, например отображать корзину товаров при наведении, а при клике по иконке - вест на саму корзину #}

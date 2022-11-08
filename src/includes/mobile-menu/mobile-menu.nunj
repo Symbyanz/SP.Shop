@@ -1,0 +1,9 @@
+{% from "../../components/menu/menu.nunj" import menu %}
+
+<div class="mobile-menu">
+	<div class="mobile-menu__content">
+		<div class="container">
+			{{ menu(7) }}
+		</div>
+	</div>
+</div>

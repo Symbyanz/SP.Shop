@@ -1,0 +1,29 @@
+// ======= GLOBAL =======
+@import 'constants';
+@import 'lib/base';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+@import 'layout';
+// @import 'controls';
+
+// ======= COMPONENTS =======
+@import '../../components/button/button';
+@import '../../components/search/search';
+@import '../../components/cartLink/cartLink';
+@import '../../components/burger/burger';
+@import '../../components/progressBar/progressBar';
+@import '../../components/tabs/tabs';
+@import '../../components/form/form';
+@import '../../components/basket/basket';
+@import '../../components/tooltip/tooltip';
+
+
+
+// ======= INCLUDES =======
+@import '../../includes/header/header';
+@import '../../includes/mobile-menu/mobile-menu';
+
+// ======= PAGES =======
+@import 'pages/main';
+@import 'pages/cart';

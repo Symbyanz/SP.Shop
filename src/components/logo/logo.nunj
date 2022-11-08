@@ -1,0 +1,11 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+
+{% macro logo() %}
+<div class="logo">
+	{{ icon({
+		iconName: 'logo',
+		className: 'icon _logo',
+		attr: 'viewBox="0 0 89 32" style="width: 89px; height: 32px;"'
+	}) }}
+</div>
+{% endmacro %}

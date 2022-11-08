@@ -1,0 +1,68 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+{% from "../../components/button/button.nunj" import button %}
+
+{% macro basket(props) %}
+
+<div class="basket">
+	<div class="basket__content">
+		<div class="basket__box">
+			<h3 class="basket__title">My basket</h3>
+			<div class="basket__items">
+				{% for item in props %}
+				<div class="basket-item">
+					<div class="basket-item__left">
+						<a href="{{ item.link }}">
+							<img src="{{ item.image }}" alt="{{ item.name }}">
+						</a>
+					</div>
+					<div class="basket-item__center">
+						<a class="basket-item__title" href="{{ item.link }}">{{ item.name }}</a>
+						<div class="basket-item__details">
+							<div class="basket-item__quantity">
+								<div class="basket-item__button _minus">
+								</div>
+								<div class="basket-item__value">{{ item.count }}</div>
+								<div class="basket-item__button _plus"></div>
+							</div>
+							<div class="basket-item__price" data-price="{{ item.price }}"><span class="value">$ {{ item.price * item.count }}</span></div>
+						</div>
+					</div>
+					<div class="basket-item__right">
+						<div class="basket-item__button _remove">
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+				{% else %}
+				<div>Empty...</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="basket__box">
+			<h3 class="basket__title">Promo code</h3>
+			<form>
+				<div class="form__group">
+					<div class="form__field _row">
+						<input class="form__input" id="promo" name="promo" type="text" placeholder="Placeholder Text">
+						{{ button({
+						className: 'basket__button _promo _blue',
+						children: 'Apply',
+						chevronRight: false
+						}) }}
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="basket__box">
+			<div class="basket__calculation">
+				<h4 class="basket__subtitle _subtotal">Subtotal <span class="value">$ 1 050</span></h4>
+				<h4 class="basket__subtitle _tax">Tax <span class="value">$ 100</span></h4>
+				<h4 class="basket__subtitle _shipping">Shipping <span class="value">$ 150</span></h4>
+				<h3 class="basket__title _total">Total <span class="value">$ 1 300</span></h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endmacro %}

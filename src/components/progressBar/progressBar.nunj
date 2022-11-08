@@ -1,0 +1,11 @@
+{% macro progressBar() %}
+<div class="progress-bar">
+	<div class="progress-bar__line"></div>
+	{% for item in progressBarItems %}
+	<div class="progress-bar__circle circle">
+		<div class="circle__value">{{ item.value }}</div>
+		<div class="circle__title">{{ item.title }}</div>
+	</div>
+	{% endfor %}
+</div>
+{% endmacro %}

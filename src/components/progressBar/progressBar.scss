@@ -1,0 +1,69 @@
+.progress-bar {
+	width: 100%;
+	margin-bottom: 60px;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	&::before {
+		content: "";
+		position: absolute;
+		background-color: $default-grey;
+		top: 9px;
+		left: 40px;
+		width: calc(100% - 80px);
+		// left: 0;
+		// width: 100%;
+		height: 1px;
+		z-index: -1;
+	}
+
+	&__line {
+		position: absolute;
+		background-color: $default-blue;
+		top: 9px;
+		left: 40px;
+		// left: 0;
+		height: 1px;
+		transition: $default-transition;
+		width: 0;
+	}
+}
+.circle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	width: 80px;
+	&._passed {
+		.circle__value {
+			border: 1px solid $default-blue;
+			background-color: $default-blue;
+			color: #fff;
+		}
+	}
+	&._active {
+		.circle__value {
+			border: 1px solid $default-blue;
+			background-color: #fff;
+			color: #000;
+		}
+	}
+	&__value {
+		z-index: 1;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		border: 1px solid $default-grey;
+		background-color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $default-grey;
+		font-size: 10px;
+	}
+
+	&__title {
+		font-size: 14px;
+		font-weight: 400;
+	}
+}

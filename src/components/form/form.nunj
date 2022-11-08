@@ -1,0 +1,90 @@
+{% from "../../components/tooltip/tooltip.nunj" import tooltip %}
+
+{% macro form(type) %}
+{% if type == 'Card' %}
+<form class="form">
+	<div class="form__box _out30">
+		<div class="form__group">
+			<div class="form__field">
+				<label class="form__label" for="cardName">Name on card</label>
+				<input class="form__input" id="cardName" name="cardName" type="text" placeholder="Placeholder Text"
+					maxlength="20">
+			</div>
+		</div>
+		<div class="form__group _for4 _space-between">
+			<div class="form__field">
+				<label class="form__label" for="cardNumber1">Card number</label>
+				<input class="form__input _number" id="cardNumber1" name="cardNumber1" type="tel" maxlength="4">
+			</div>
+			<div class="form__field">
+				<input class="form__input _number" id="cardNumber2" name="cardNumber2" type="tel" maxlength="4">
+			</div>
+			<div class="form__field">
+				<input class="form__input _number" id="cardNumber3" name="cardNumber3" type="tel" maxlength="4">
+			</div>
+			<div class="form__field">
+				<input class="form__input _number" id="cardNumber4" name="cardNumber4" type="tel" maxlength="4">
+			</div>
+		</div>
+		<div class="form__group _for4">
+			<div class="form__field">
+				<label class="form__label" for="expareDate">Expire date</label>
+				<input class="form__input _expires" id="expareDate" name="expareDate" type="tel" maxlength='5'>
+			</div>
+			<div class="form__field">
+				<label class="form__label" for="cvvCode">CVV code {{ tooltip('Lorem ipsum dolor sit Lorem ipsum dolor
+					sitLorem ipsum dolor sit, amet consectetur
+					adipisicing elit. Repellendus, repellat')}}
+				</label>
+				<input class="form__input _number" id="cvvCode" name="cvvCode" type="tel" maxlength="3">
+			</div>
+		</div>
+	</div>
+	<div class="form__group">
+		<div class="form__field _checkox">
+			<input class="form__input" type="checkbox" id="safeInfoCard" name="safeInfoCard">
+			<label class="form__label" for="safeInfoCard">Safe information of this credit card</label>
+		</div>
+	</div>
+	<div class="form__group">
+		<div class="form__field _checkox">
+			<input class="form__input" type="checkbox" id="acceptsCard" name="acceptsCard">
+			<label class="form__label" for="acceptsCard">I accept the <a href="#" target="_blank">terms and
+					conditions</a>
+				and the <a href="#" target="_blank"> Privacy Policies</a></label>
+		</div>
+	</div>
+</form>
+{% elif type == 'PayPal' %}
+<form class="form">
+	<div class="form__box _out30">
+		<div class="form__group">
+			<div class="form__field">
+				<label class="form__label" for="email">E-mail</label>
+				<input class="form__input" id="email" name="email" type="email">
+			</div>
+		</div>
+		<div class="form__group">
+			<div class="form__field">
+				<label class="form__label" for="password">Password</label>
+				<input class="form__input" id="password" name="password" type="password" autocomplete="off">
+			</div>
+		</div>
+	</div>
+	<div class="form__group">
+		<div class="form__field _checkox">
+			<input class="form__input" type="checkbox" id="safeInfoPayPal" name="safeInfoPayPal">
+			<label class="form__label" for="safeInfoPayPal">Safe information of this PayPal account</label>
+		</div>
+	</div>
+	<div class="form__group">
+		<div class="form__field _checkox">
+			<input class="form__input" type="checkbox" id="acceptsPayPal" name="acceptsPayPal">
+			<label class="form__label" for="acceptsPayPal">I accept the <a href="#" target="_blank">terms and
+					conditions</a>
+				and the <a href="#" target="_blank"> Privacy Policies</a></label>
+		</div>
+	</div>
+</form>
+{% endif %}
+{% endmacro %}

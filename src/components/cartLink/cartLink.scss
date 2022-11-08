@@ -1,0 +1,30 @@
+.cartLink {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	.badge {
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 13px;
+		height: 13px;
+		border-radius: 50%;
+		background-color: $default-blue;
+		color: #fff;
+		font-size: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 2;
+		&._big{
+			width: 16px;
+			height: 16px;
+			font-size: 8px;
+		}
+	}
+}
+

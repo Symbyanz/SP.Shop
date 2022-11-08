@@ -1,0 +1,72 @@
+{
+	"menuItems": [
+		{
+			"name": "Women’s",
+			"id": 0,
+			"path": "#"
+		},
+		{
+			"name": "Men’s",
+			"id": 1,
+			"path": "#"
+		},
+		{
+			"name": "Home",
+			"id": 2,
+			"path": "/"
+		},
+		{
+			"name": "Travel",
+			"id": 3,
+			"path": "#"
+		},
+		{
+			"name": "Beauty",
+			"id": 4,
+			"path": "#"
+		},
+		{
+			"name": "Sale",
+			"id": 5,
+			"path": "#"
+		}
+	],
+	"progressBarItems": [
+		{
+			"value": 1,
+			"title": "Account"
+		},
+		{
+			"value": 2,
+			"title": "Shipping"
+		},
+		{
+			"value": 3,
+			"title": "Billing"
+		},
+		{
+			"value": 4,
+			"title": "Review"
+		}
+	],
+	"someData": [
+		{
+			"id": 234,
+			"name": "Amet minim mollit non deserunt ullamco est sit",
+			"image": "../../assets/images/product_1.png",
+			"price": 525,
+			"count": 1,
+			"maxCount": 1020,
+			"link": "#"
+		},
+		{
+			"id": 111,
+			"name": "Amet minim mollit non",
+			"image": "../../assets/images/product_2.png",
+			"count": 14,
+			"price": 525,
+			"maxCount": 2020,
+			"link": "#"
+		}
+	]
+}

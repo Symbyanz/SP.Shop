@@ -1,0 +1,140 @@
+.basket {
+	width: 100%;
+	height: 100%;
+
+	&__box {
+		padding: 40px;
+		border-bottom: 1px solid #cfcfcf;
+		width: 100%;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	&__title {
+		@include title-h3;
+	}
+
+	&__subtitle {
+		@include title-h4;
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	&__calculation {
+		.basket__subtitle,
+		.basket__title {
+			line-height: 34px;
+			text-align: left;
+			span {
+				float: right;
+			}
+		}
+	}
+}
+
+.basket-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 10px;
+	&__left {
+		flex: 100px 0;
+		height: 100px;
+	}
+
+	&__center {
+		flex: 1;
+	}
+
+	&__right {
+		flex: 18px 0;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.25;
+		height: 32px;
+		-ms-text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		-ms-line-clamp: 2;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		display: -webkit-box;
+		word-wrap: break-word;
+		-webkit-box-orient: vertical;
+		box-orient: vertical;
+		text-decoration: none;
+	}
+
+	&__details {
+		display: flex;
+		align-items: center;
+		gap: 25px;
+	}
+
+	&__quantity {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__value,
+	&__value {
+		font-size: 14px;
+		line-height: 1.25;
+		font-weight: 400;
+		color: #000;
+	}
+
+	&__button {
+		width: 20px;
+		height: 20px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		transition: $default-transition;
+		cursor: pointer;
+		&._plus {
+			background-image: inline("plus.svg");
+		}
+		&._minus {
+			background-image: inline("minus.svg");
+		}
+
+		&._remove {
+			position: relative;
+			span {
+				position: absolute;
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: #cfcfcf;
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+				transition: $default-transition;
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+			&:hover,
+			&:active {
+				span {
+					background-color: #000;
+				}
+			}
+		}
+		&:active {
+			transform: scale(0.95);
+		}
+	}
+}

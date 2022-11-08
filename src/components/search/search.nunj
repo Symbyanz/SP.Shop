@@ -1,0 +1,12 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+
+{% macro search(parent) %}
+<div class="search">
+	{{ icon({
+	iconName: 'search',
+	className: 'icon _search',
+	attr: 'viewBox="0 0 24 24" style="width: 24px; height: 24px;"'
+	}) }}
+</div>
+{% endmacro %}
+{# Может быть отдельным элементом, напрмер поиск в хедере, а не линк на отдельную страницу #}

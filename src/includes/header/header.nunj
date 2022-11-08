@@ -1,0 +1,29 @@
+{% from "../../components/menu/menu.nunj" import menu %}
+{% from "../../components/logo/logo.nunj" import logo %}
+{% from "../../components/search/search.nunj" import search %}
+{% from "../../components/cartLink/cartLink.nunj" import cartLink %}
+{% from "../../components/burger/burger.nunj" import burger %}
+
+
+
+<div class="header">
+	<div class="header__container container">
+		<a class="header__box _homelink" href="/">
+			{{ logo() }}
+		</a>
+		<nav class="header__box navbar-center">
+			{{ menu(7) }}
+		</nav>
+		<div class="header__box navbar-right">
+			<a class="_searchlink" href="/searchpage.html">
+				{{ search() }}
+			</a>
+			<a class="_cartlink" href="/cart.html">
+				{{ cartLink(2) }}
+			</a>
+			<div class="_burger">
+				{{ burger() }}
+			</div>
+		</div>
+	</div>
+</div>
